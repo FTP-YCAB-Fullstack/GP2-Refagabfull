@@ -27,7 +27,7 @@ const Home = () =>{
             <div className="w-screen h-screen">
                 <div className="image-home flex justify-center items-center flex-col">
                     <form onSubmit={handleForm}>
-                        <div class="mt-24  font-black text-6xl text-red-800">
+                        <div class="mt-24  font-black text-6xl text-red-700">
                             <h1>Welcome to RefaGabfull Library</h1>
                         </div>
                 
@@ -40,8 +40,8 @@ const Home = () =>{
                             </div>
                         </div>
                     </form>
-                </div>
                     <CardModal listBook={result}/>
+                </div>
             </div>
               
         )
