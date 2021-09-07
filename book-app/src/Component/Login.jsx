@@ -3,8 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import Gambar from "../Asset/imglogin.png";
 import {Link, useHistory} from "react-router-dom";
 import {checkLogin} from '../reducer/typeAction'
-// import Contact from "./Asset/contact icon 1.png"
-// import Iconpass from "./Asset/password icon 1.png"
 
 const Login = () => {
     // let data = ''
@@ -31,37 +29,15 @@ const Login = () => {
     }
 
     const Masuk = (e) => {
-        // localStorage.setItem("login", (data))
-        // setStatus (data) 
-        let history = useHistory();
-        localStorage.setItem("status", true )
-        dispatch(checkLogin(true))
-        if(username === ''){
+        if(username === '' || password === ''){
             alert ("Username Harus di Isi")
         }
-        else if(password === ''){
-            alert ("Password Harus di Isi")
-        }
-    }
-
-    useEffect(()=>{
-        if (Masuk){
-            history.push('/login')
-        }
-    },[])
-
-    useEffect(()=>{ 
-        // let contoh =  localStorage.getItem("status")
-        if (result == true){
+        else{
+            localStorage.setItem("status", true )
+            dispatch(checkLogin(true))
             history.push('/')
         }
-    },[])
-
-
-    // const getLocal = () =>{
-    //     localStorage.getItem("login")
-    // }
-
+    }
 
     return(
         <div>
@@ -84,7 +60,7 @@ const Login = () => {
                                         </div>
                                             <button  className="bg-pink-500 py-2 px-4 rounded text-white" type="button" onClick={Masuk}>Login</button>
                                             {/* <button className="bg-pink-500 py-2 px-4 rounded text-white" type="button" onClick= {getLocal} >Test</button> */}
-                                            {/* <Link to="/daftar" className="text-right">Sing Up</Link> */}
+                                            <Link to="/daftar" className="text-right">Sing Up</Link>
                 </div>
             </div>
         </div>
