@@ -1,41 +1,40 @@
-
+import React from 'react';
 import './App.css';
-// import FormLogin from "./Pages/FormLogin";
-// import Footer from "./Pages/Footer";
 import Login from './Component/Login'
+import Home from './Component/Home'
 // import Daftar from './Component/Daftar'
 import {
   BrowserRouter as Router,
   Switch,
-  Route 
+  Route,
+  Link
 } from "react-router-dom";
-import Home from './Component/homepage'
-import { useSelector} from "react-redux";
-import React, {useEffect} from "react";
-import {useHistory} from "react-router-dom";
+import { GuardProvider, GuardedRoute } from 'react-router-guards';
+import Loading  from './Pages/Loading';
+import NotFound from './Pages/NotFound';
+
+const requireLogin = (to, from, next) => {
+  if (to.meta.auth) {
+    if (localStorage.getItem('status', true)) {
+      next();
+    }
+    next.redirect('/login');
+  } else {
+    next();
+  }
+};
 
 function App() {
-  // const result = useSelector((state) => state.isAuth)
-  // let history = useHistory()
-  // const status = localStorage.getItem("status")
-  // localStorage.setItem("login", (data))
-//   useEffect(()=>{ 
-//     // let contoh =  localStorage.getItem("status")
-//     if (status == true){
-//         history.push('/home')
-//     }
-//     console.log(result);
-// },[])
-
   return (
     <div>
-    <Switch>
-      <Route exact path="/" component={Home}/>
-      <Route exact path="/login" component={Login}/>
-      {/* <Route exact path="/daftar" component={Daftar}/> */}
-    </Switch>
-      {/* <FormLogin /> */}
-      {/* <Footer /> */}
+      <Router>
+      <GuardProvider guards={[requireLogin]} loading={Loading} error={NotFound}>
+        <Switch>
+          <GuardedRoute path="/login" exact component={Login} />
+          <GuardedRoute path="/" exact component={Home} meta={{ auth: true }} />
+        </Switch>
+      </GuardProvider>
+    </Router>
     </div>
 
   );

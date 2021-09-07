@@ -1,6 +1,7 @@
 
 import React from 'react'
-import './Footer.css'
+
+import '../Pages/StyleFooter.css'
 
 const Footer = () => {
     return(
@@ -15,7 +16,6 @@ const Footer = () => {
         </footer>
     )
 
-} 
 
-export default Footer;
+export default Footer
 
