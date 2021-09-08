@@ -14,13 +14,11 @@ function CardModal(props) {
                                     <h1 className="text-base font-bold text-center">{el.volumeInfo.title}</h1>
                                     <p className="mt-2 text-md text-center font-semibold text-gray-600">by {el.volumeInfo.authors}</p>
                                     <p className="mt-1 text-gray-500 text-center">Page count : {el.volumeInfo.pageCount}</p>
-                                    {/* <p className="mt-1 text-gray-500 font-"> <a href={el.volumeInfo.previewLink} target='_blank'>Read me</a> </p> */}
                                 </div>
                         </div>
                         </a>
-                    </div>
-                )
-            } )}
+                    </div>)
+                } )}
         </div>
         
     )
