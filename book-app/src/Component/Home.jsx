@@ -38,27 +38,26 @@ const Home = () =>{
     }
         return(
             <div className="w-screen h-screen flex ">
-                <div className="image-home flex justify-center items-center flex-col">
-                <button className="absolute top-5 right-20 h-10 w-20 bg-yellow-700 hover:bg-yellow-300 text-white focus:outline-none focus:ring rounded px-3 py-1" type="button" onClick={handleSignOut}>SignOut</button>
-                    <form onSubmit={handleForm}>
-                        <div class="mt-10 font-black text-6xl text-red-700">
-                            <h1>Welcome to RefaGabfull Library</h1>
-                        </div>
-                
-                        <div class="p-8 flex justify-center"> 
-                            <div class="bg-white flex items-center rounded-full shadow-xl w-4/5">
-                                <input class="rounded-l-full w-full py-4 px-6 text-yellow-800 font-bold leading-tight focus:outline-none bg-white" id="search" type="text" onChange={input} value={book} placeholder="Search the book here..."/>
-                                <div class="p-4">
-                                    <button class="bg-yellow-600 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center"><i class="fas fa-search text-white"></i></button>
-                                </div>
+            <div className="image-home flex justify-center items-center flex-col">
+            <button className="absolute top-5 right-20 h-10 w-20 bg-yellow-700 hover:bg-yellow-300 text-white focus:outline-none focus:ring rounded px-3 py-1" type="button" onClick={handleSignOut}>SignOut</button>
+                <form onSubmit={handleForm}>
+                    <div class="mt-10 font-black text-6xl text-red-700 text-center">
+                        <h1>Welcome to RefaGabfull Library</h1>
+                    </div>
+            
+                    <div class="p-8 flex justify-center"> 
+                        <div class="bg-white flex items-center rounded-full shadow-xl w-4/5">
+                            <input class="rounded-l-full w-full py-4 px-6 text-yellow-800 font-bold leading-tight focus:outline-none bg-white" id="search" type="text" onChange={input} value={book} placeholder="Search the book here..."/>
+                            <div class="p-4">
+                                <button class="bg-yellow-600 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center"><i class="fas fa-search text-white"></i></button>
                             </div>
                         </div>
-                    </form>
-                    <CardModal listBook={result}/>
-                    {/* <Footer /> */}
-                </div>
+                    </div>
+                </form>
+                <CardModal listBook={result}/>
             </div>
-        )
+        </div>
+    )
 }
 
 export default Home

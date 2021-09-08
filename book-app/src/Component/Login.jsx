@@ -70,10 +70,6 @@ const Login = () => {
                                 </p>
                             </button>
                         </form>
-                    {/* <p class="text-gray-700 text-sm mt-2">
-                        don't have an account?
-                        <input type="button" value="Register" onClick={toRegist} class="text-red-800 hover:text-green-600 mt-3 focus:outline-none font-bold underline"/>
-                    </p> */}
                     </div>
                 </div>
             </div>

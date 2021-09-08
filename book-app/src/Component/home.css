@@ -18,15 +18,15 @@
     background-image: linear-gradient(#FBDDB9 ,#D45029  );
 }
 ::-webkit-scrollbar {
-    width: 12px;               /* width of the entire scrollbar */
+    width: 12px;               
 }
   
 ::-webkit-scrollbar-track {
-background: #D45029;        /* color of the tracking area */
+background: #D45029;        
 }
 
 ::-webkit-scrollbar-thumb {
-background-color: #FBDDB9;    /* color of the scroll thumb */
-border-radius: 20px;       /* roundness of the scroll thumb */
-border: 3px solid #D45029;  /* creates padding around scroll thumb */
+background-color: #FBDDB9;    
+border-radius: 20px;       
+border: 3px solid #D45029;  
 }
