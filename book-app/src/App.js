@@ -12,6 +12,7 @@ import {
 import { GuardProvider, GuardedRoute } from 'react-router-guards';
 import Loading  from './Pages/Loading';
 import NotFound from './Pages/NotFound';
+import Footer from './Pages/Footer';
 
 const requireLogin = (to, from, next) => {
   if (to.meta.auth) {
@@ -35,6 +36,7 @@ function App() {
         </Switch>
       </GuardProvider>
     </Router>
+    <Footer />
     </div>
 
   );

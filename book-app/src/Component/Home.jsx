@@ -3,6 +3,8 @@ import axios from "axios";
 import CardModal from "./CardModal";
 import { useHistory } from "react-router";
 import './home.css'
+// import Footer from "../Pages/Footer"
+
 
 const Home = () =>{
     const history = useHistory()
@@ -53,6 +55,7 @@ const Home = () =>{
                         </div>
                     </form>
                     <CardModal listBook={result}/>
+                    {/* <Footer /> */}
                 </div>
             </div>
         )
