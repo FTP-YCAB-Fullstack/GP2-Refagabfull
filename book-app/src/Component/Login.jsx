@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React, {useState} from "react";
+import { useDispatch } from "react-redux";
 import { useHistory} from "react-router-dom";
 import {checkLogin} from '../reducer/typeAction'
 import './home.css'
@@ -9,14 +9,7 @@ const Login = () => {
     let history = useHistory()
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const result = useSelector((state) => state.isAuth)
     const dispatch = useDispatch()
-    // if (username && password){
-    //     data = {
-    //         username,
-    //         password
-    //     }
-    // }
 
     const onChangeUsername = (e) => {
         const value = e.target.value
