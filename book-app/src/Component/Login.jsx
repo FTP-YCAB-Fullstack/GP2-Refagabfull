@@ -30,7 +30,7 @@ const Login = () => {
 
     const Masuk = (e) => {
         if(username === '' || password === ''){
-            alert ("Username Harus di Isi")
+            alert ("Username dan Password Harus di Isi")
         }
         else{
             localStorage.setItem("status", true )
@@ -41,7 +41,7 @@ const Login = () => {
 
     return(
         <div>
-        {JSON.stringify(result)}
+        {/* {JSON.stringify(result)} */}
         <h1 className="font-extrabold text-pink p-5 font-sans text-indigo-400">Refagabfull</h1>
             <div className=" flex ">
                 <img className="flex" src={Gambar} alt="imglogin" />
@@ -60,7 +60,7 @@ const Login = () => {
                                         </div>
                                             <button  className="bg-pink-500 py-2 px-4 rounded text-white" type="button" onClick={Masuk}>Login</button>
                                             {/* <button className="bg-pink-500 py-2 px-4 rounded text-white" type="button" onClick= {getLocal} >Test</button> */}
-                                            <Link to="/daftar" className="text-right">Sing Up</Link>
+                                            {/* <Link to="/daftar" className="text-right">Sing Up</Link> */}
                 </div>
             </div>
         </div>
