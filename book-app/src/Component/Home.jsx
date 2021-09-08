@@ -1,26 +1,26 @@
 import React, { useState } from "react";
-import reactDom from "react-dom";
 import axios from "axios";
 import CardModal from "./CardModal";
-import '../Component/home.css'
-import { useHistory} from "react-router-dom";
-import Footer from '../Pages/Footer'
+import { useHistory } from "react-router";
+import './home.css'
 
-
-const Home =() => {
+const Home = () =>{
+    const history = useHistory()
     const [book,SetBook] = useState("");
     const [result, setResult] = useState([]);
-    const [keyApi, setKey] = useState("AIzaSyBYAu01gaUQyI7sBJrtZNNy7bVumVZwr1Y")
-    const history = useHistory()
-    const handleForm = (e) =>{
+    const [keyApi, setKey] = useState("AIzaSyBYAu01gaUQyI7sBJrtZNNy7bVumVZwr1Y");
+
+    const handleForm = async e =>{
         e.preventDefault();
-        
-        axios.get("https://www.googleapis.com/books/v1/volumes?q="+book+"&key="+keyApi)
-        .then(data => {
-            // console.log(data.data.items)
-            setResult(data.data.items)
-        })
-        SetBook("")
+        try {
+            let data = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${book}&key=${keyApi}`)
+            data = data.data.items;
+            setResult(data)
+            
+        } catch (error) {
+            alert("we're sorry, book you're looking for doesn't exist");
+            
+        }
     }
     
     const input = (e) => {
@@ -31,12 +31,12 @@ const Home =() => {
         localStorage.removeItem("status", false)
         history.push('/login')
     }
-    return (
-        <div>
-            <div className="w-screen h-screen">
+        return(
+            <div className="w-screen h-screen flex ">
                 <div className="image-home flex justify-center items-center flex-col">
+                <button type="button" onClick={handleSignOut}>SignOut</button>
                     <form onSubmit={handleForm}>
-                        <div class="mt-24  font-black text-6xl text-red-800">
+                        <div class="mt-10 font-black text-6xl text-red-700">
                             <h1>Welcome to RefaGabfull Library</h1>
                         </div>
                 
@@ -46,17 +46,14 @@ const Home =() => {
                                 <div class="p-4">
                                     <button class="bg-yellow-600 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center"><i class="fas fa-search text-white"></i></button>
                                 </div>
-                                <button type="button" onClick={handleSignOut}>SignOut</button>
                             </div>
                         </div>
                     </form>
                     <CardModal listBook={result}/>
-                    <Footer />
                 </div>
             </div>
-        </div>
-    )
+              
+        )
 }
-
 
 export default Home
