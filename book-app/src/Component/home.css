@@ -1,5 +1,5 @@
 .image-home{
-    background: url(../Asset/bg-book.jpg) ;
+    background: url(./asset/bg-book.jpg) ;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -7,4 +7,26 @@
     height: 100vh;
     /* position: relative;
     background-attachment: fixed; */
+}
+
+.book-login{
+    background: url(./asset/book-login.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.back-color{
+    background-image: linear-gradient(#FBDDB9 ,#D45029  );
+}
+::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+}
+  
+::-webkit-scrollbar-track {
+background: #D45029;        /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+background-color: #FBDDB9;    /* color of the scroll thumb */
+border-radius: 20px;       /* roundness of the scroll thumb */
+border: 3px solid #D45029;  /* creates padding around scroll thumb */
 }
