@@ -40,7 +40,7 @@ function Login() {
 
 
     const toRegist = () => {
-     history.push("/regis")       
+    history.push("/regis")       
     }
     
     return (

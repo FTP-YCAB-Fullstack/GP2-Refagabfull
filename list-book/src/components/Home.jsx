@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import reactDom from "react-dom";
+// import reactDom from "react-dom";
 import axios from "axios";
 import CardModal from "./CardModal";
 import './home.css'
@@ -14,7 +14,7 @@ const Home = () =>{
         
         axios.get("https://www.googleapis.com/books/v1/volumes?q="+book+"&key="+keyApi)
         .then(data => {
-            // console.log(data.data.items)
+            console.log(data.data.items)
             setResult(data.data.items)
         })
         SetBook("")
@@ -43,7 +43,6 @@ const Home = () =>{
                     <CardModal listBook={result}/>
                 </div>
             </div>
-              
         )
 }
 

@@ -29,8 +29,8 @@ function Regis() {
     return (
         <div>
             <form onSubmit={submitHandler}>
-                <input onChange={formHandler} type="text" placeholder="name" name="name"/>
                 <input onChange={formHandler} type="text" placeholder="username" name="username"/>
+                <input onChange={formHandler} type="text" placeholder="email" name="email"/>
                 <input onChange={formHandler} type="password" placeholder="password" name="password"/>
                 <input type="submit" value="Sign Up"/>
             </form>
