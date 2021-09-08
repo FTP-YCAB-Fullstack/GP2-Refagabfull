@@ -6,8 +6,6 @@ import Home from './Component/Home'
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
 } from "react-router-dom";
 import { GuardProvider, GuardedRoute } from 'react-router-guards';
 import Loading  from './Pages/Loading';

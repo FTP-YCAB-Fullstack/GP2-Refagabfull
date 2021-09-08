@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React, {useState} from "react";
+import { useDispatch } from "react-redux";
 import { useHistory} from "react-router-dom";
 import {checkLogin} from '../reducer/typeAction'
 import './home.css'
@@ -9,14 +9,7 @@ const Login = () => {
     let history = useHistory()
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const result = useSelector((state) => state.isAuth)
     const dispatch = useDispatch()
-    // if (username && password){
-    //     data = {
-    //         username,
-    //         password
-    //     }
-    // }
 
     const onChangeUsername = (e) => {
         const value = e.target.value
@@ -77,10 +70,6 @@ const Login = () => {
                                 </p>
                             </button>
                         </form>
-                    {/* <p class="text-gray-700 text-sm mt-2">
-                        don't have an account?
-                        <input type="button" value="Register" onClick={toRegist} class="text-red-800 hover:text-green-600 mt-3 focus:outline-none font-bold underline"/>
-                    </p> */}
                     </div>
                 </div>
             </div>
