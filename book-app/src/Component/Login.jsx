@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Gambar from "../Asset/imglogin.png";
-import {Link, useHistory} from "react-router-dom";
+import { useHistory} from "react-router-dom";
 import {checkLogin} from '../reducer/typeAction'
+import './home.css'
 
 const Login = () => {
     // let data = ''
@@ -30,7 +30,7 @@ const Login = () => {
 
     const Masuk = (e) => {
         if(username === '' || password === ''){
-            alert ("Username Harus di Isi")
+            alert ("Can't access, Username or password is incorrect")
         }
         else{
             localStorage.setItem("status", true )
@@ -41,29 +41,51 @@ const Login = () => {
 
     return(
         <div>
-        {JSON.stringify(result)}
-        <h1 className="font-extrabold text-pink p-5 font-sans text-indigo-400">Refagabfull</h1>
-            <div className=" flex ">
-                <img className="flex" src={Gambar} alt="imglogin" />
-                    <div className="w-4/12 border border-gray-300 rounded p-10 bg-blue-200 grid-row-2">
-                        <h1 className="text-2xl text-center text-white font-semibold p-1">LOGIN</h1>
-                            <div className="h-2 bg-indigo-400 rounded-t-md"></div>
-                                <div className="px-3 py-1 "></div>
-                                    <h5 className="text-center ">Please enter your login and password</h5>
-                                        <div className="mb-4">
-                                            <input type="text" className="border border-gray-400 py-2 px-4 w-full" value={username} onChange={onChangeUsername} placeholder="Username" />
-                                            {/* <img src={Contact} alt="icon contact"/> */}
-                                        </div>
-                                        <div className="mb-4">
-                                            <input type="password" className="border border-gray-400 py-2 px-4 w-full" value={password} onChange={onChangePassword} placeholder="Password" />
-                                            {/* <img src={Iconpass} alt="icon password"/> */}
-                                        </div>
-                                            <button  className="bg-pink-500 py-2 px-4 rounded text-white" type="button" onClick={Masuk}>Login</button>
-                                            {/* <button className="bg-pink-500 py-2 px-4 rounded text-white" type="button" onClick= {getLocal} >Test</button> */}
-                                            <Link to="/daftar" className="text-right">Sing Up</Link>
+            <div class="back-color h-screen w-full flex justify-center items-center bg-gradient-to-tr ">
+                <div class="book-login w-full sm:w-1/2 md:w-9/12 lg:w-1/2 mx-3 md:mx-5 lg:mx-0 shadow-md flex flex-col md:flex-row items-center rounded z-10 overflow-hidden bg-center bg-cover bg-blue-600">
+                    <div class="w-full md:w-1/2 flex flex-col justify-center items-center bg-opacity-25 bg-yellow-700 backdrop">
+                        <h1 class="text-3xl md:text-4xl font-extrabold text-white my-2 md:my-0">
+                            RefaGabfull
+                        </h1>
+                        <p class="mb-2 text-white hidden md:block font-mono">
+                        search a book here
+                        </p>
+                    </div>
+                    <div class="w-full md:w-1/2 flex flex-col items-center bg-white py-5 md:py-8 px-4">
+                        <h3 class="mb-4 font-bold text-3xl flex items-center text-yellow-700">
+                        LOGIN
+                        </h3>
+                        <form onSubmit={Masuk} class="px-3 flex flex-col justify-center items-center w-full gap-3">
+                            <input 
+                                value={username} onChange={onChangeUsername} 
+                                placeholder="Username..."
+                                type="text" 
+                                class="px-4 py-2 w-full rounded border border-gray-300 shadow-sm text-base placeholder-gray-500 placeholder-opacity-50 focus:outline-none focus:border-blue-500"
+                            />
+                            <input 
+                                value={password} onChange={onChangePassword} 
+                                placeholder="Password..."
+                                type="password" 
+                                class="px-4 py-2 w-full rounded border border-gray-300 shadow-sm text-base placeholder-gray-500 placeholder-opacity-50 focus:outline-none focus:border-blue-500"
+                            />
+                            <button class="flex justify-center items-center bg-yellow-700 hover:bg-yellow-300 text-white focus:outline-none focus:ring rounded px-3 py-1">
+                                <svg class="w-5 h-5 inline"fill="none"stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
+                                </svg>
+                                <p class="ml-1 text-lg">
+                                Login
+                                </p>
+                            </button>
+                        </form>
+                    {/* <p class="text-gray-700 text-sm mt-2">
+                        don't have an account?
+                        <input type="button" value="Register" onClick={toRegist} class="text-red-800 hover:text-green-600 mt-3 focus:outline-none font-bold underline"/>
+                    </p> */}
+                    </div>
                 </div>
             </div>
         </div>
+
     )
 }
 
