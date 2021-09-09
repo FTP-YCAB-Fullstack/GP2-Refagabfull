@@ -5,7 +5,6 @@ import {checkLogin} from '../reducer/typeAction'
 import './home.css'
 
 const Login = () => {
-    // let data = ''
     let history = useHistory()
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -22,6 +21,7 @@ const Login = () => {
     }
 
     const Masuk = (e) => {
+        e.preventDefault();
         if(username === '' || password === ''){
             alert ("Can't access, Username or password is incorrect")
         }

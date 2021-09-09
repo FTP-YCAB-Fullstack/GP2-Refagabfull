@@ -1,8 +1,5 @@
 import React from 'react';
 import './App.css';
-import Login from './Component/Login'
-import Home from './Component/Home'
-// import Daftar from './Component/Daftar'
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,6 +8,8 @@ import { GuardProvider, GuardedRoute } from 'react-router-guards';
 import Loading  from './Pages/Loading';
 import NotFound from './Pages/NotFound';
 import Footer from './Pages/Footer';
+import LoginPage from './Pages/LoginPage';
+import HomePage from './Pages/HomePage';
 
 const requireLogin = (to, from, next) => {
   if (to.meta.auth) {
@@ -29,8 +28,8 @@ function App() {
       <Router>
       <GuardProvider guards={[requireLogin]} loading={Loading} error={NotFound}>
         <Switch>
-          <GuardedRoute path="/login" exact component={Login} />
-          <GuardedRoute path="/" exact component={Home} meta={{ auth: true }} />
+          <GuardedRoute path="/login" exact component={LoginPage} />
+          <GuardedRoute path="/" exact component={HomePage} meta={{ auth: true }} />
         </Switch>
       </GuardProvider>
     </Router>
