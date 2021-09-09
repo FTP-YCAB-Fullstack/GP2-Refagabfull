@@ -7,7 +7,7 @@ function CardModal(props) {
         <div className="flex gap-x-16 flex-wrap justify-center overflow-y-scroll">
             {props.listBook?.map((el) => {
                 return (
-                    <div className=" flex items-center justify-center ">
+                    <div className=" flex items-center justify-center mb-5">
                         <a href={el.volumeInfo.previewLink} target='_blank'>
                         <div className=" w-80 h-96 bg-white rounded-xl shadow-lg hover:shadow-xl hover:scale-105 duration-500  transform transition cursor-pointer flex flex-col justify-center items-center mb-10">
                             <img className="mt-8" src={el?.volumeInfo?.imageLinks?.thumbnail} alt=""/>

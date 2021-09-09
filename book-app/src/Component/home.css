@@ -1,12 +1,10 @@
 .image-home{
-    background: url(./asset/bg-book.jpg) ;
+    background: url(./asset/bg-book.png) ;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     width: 100%;
     height: 100vh;
-    /* position: relative;
-    background-attachment: fixed; */
 }
 
 .book-login{

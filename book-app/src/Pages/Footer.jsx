@@ -1,7 +1,7 @@
 
 import React from 'react'
 
-import '../Pages/StyleFooter.css'
+import './Footer.css'
 
 const Footer = () => {
     return(
