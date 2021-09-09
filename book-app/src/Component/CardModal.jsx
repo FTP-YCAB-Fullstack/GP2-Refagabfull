@@ -1,6 +1,7 @@
 import React from 'react'
 import './home.css'
 
+
 function CardModal(props) {
     return (
         <div className="flex gap-x-16 flex-wrap justify-center overflow-y-scroll">
