@@ -26,6 +26,3 @@ Contributors    :
 - Al Fathya Khaerunnisa
 - Renita Nathania
 - Ghabriel Febryan
-
-
-
