@@ -22,6 +22,7 @@ const Login = () => {
     }
 
     const Masuk = (e) => {
+        e.preventDefault();
         if(username === '' || password === ''){
             alert ("Can't access, Username or password is incorrect")
         }

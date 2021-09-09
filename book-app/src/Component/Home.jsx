@@ -39,10 +39,10 @@ const Home = () =>{
         return(
             <div className="w-screen h-screen flex ">
             <div className="image-home flex justify-center items-center flex-col">
-            <button className="absolute top-5 right-20 h-10 w-20 bg-yellow-700 hover:bg-yellow-300 text-white focus:outline-none focus:ring rounded px-3 py-1" type="button" onClick={handleSignOut}>SignOut</button>
+            <button className="absolute top-5 right-20 h-10 w-20 bg-yellow-600 hover:bg-yellow-300 text-white focus:outline-none focus:ring rounded px-3 py-1" type="button" onClick={handleSignOut}>SignOut</button>
                 <form onSubmit={handleForm}>
-                    <div class="mt-10 font-black text-6xl text-red-700 text-center">
-                        <h1>Welcome to RefaGabfull Library</h1>
+                    <div class="mt-10 font-black text-6xl text-white text-center">
+                        <h1>Welcome to <span className="text-yellow-500">RefaGabfull</span>  Library</h1>
                     </div>
             
                     <div class="p-8 flex justify-center"> 
