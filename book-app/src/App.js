@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-// import Daftar from './Component/Daftar'
 import {
   BrowserRouter as Router,
   Switch,

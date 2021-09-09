@@ -5,7 +5,6 @@ import {checkLogin} from '../reducer/typeAction'
 import './home.css'
 
 const Login = () => {
-    // let data = ''
     let history = useHistory()
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');

@@ -3,7 +3,6 @@ import axios from "axios";
 import CardModal from "./CardModal";
 import { useHistory } from "react-router";
 import './home.css'
-// import Footer from "../Pages/Footer"
 
 
 const Home = () =>{
